@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "3067cd56-502b-4b7e-b6be-aa45cf4572de",
+		"name": "Spring Boot Security Demo App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth-service/new",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"mohit\",\n    \"email\": \"mohit@example.com\",\n    \"password\": \"mohit123\",\n    \"roles\": \"ROLE_ADMIN\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth-service/user/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth-service",
+						"user",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth-service/authenticate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"mohit\",\n    \"password\": \"mohit123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth-service/user/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth-service",
+						"user",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth-service/swagger-ui.html",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/swagger-ui.html",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"swagger-ui.html"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth-service/actuator/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth-service/data/123",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2hpdCIsImlhdCI6MTcxOTkzMTA0MiwiZXhwIjoxNzE5OTMyODQyfQ.gcgU79c7j-q8oz3P1iYpfSSsvpvKtdXK-GN-qKLmzRA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"requirementTitle\": \"User Authorization\",\n  \"requirementId\": \"REQ-1234\",\n  \"requirementVersion\": \"1.0\",\n  \"requirementDescription\": \"The system shall support user authentication via username and password.\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vehicle-service/data/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehicle-service",
+						"data",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth-service/data/123",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2hpdCIsImlhdCI6MTcxOTkzMTA0MiwiZXhwIjoxNzE5OTMyODQyfQ.gcgU79c7j-q8oz3P1iYpfSSsvpvKtdXK-GN-qKLmzRA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vehicle-service/data/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehicle-service",
+						"data",
+						"123"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
